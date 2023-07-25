@@ -1,0 +1,30 @@
+.appointments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appointment{
+    position: relative;
+}
+
+.delete-button{
+    position: absolute;
+    top: 0;
+    left: 600px;
+}
+.bitmedi{
+    background-color: azure;
+}
+.bitti{
+    background-color: pink;
+}
+.ilgilenildi{
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    font-size: 1.5rem;
+}
+.completed{
+    text-decoration: line-through;
+}
