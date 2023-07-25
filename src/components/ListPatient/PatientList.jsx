@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import AddPatient from '../AddPatient/PatientAdd'
 
 
-const PatientList = ({data, onDelete}) => {
+const PatientList = ({data, onDelete, onCreate}) => {
 
   return (
     <div className='liste my-5'>

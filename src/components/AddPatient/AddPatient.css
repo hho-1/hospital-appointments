@@ -6,12 +6,13 @@
 
 .appointment{
     position: relative;
+    width: 30vw;
 }
 
 .delete-button{
     position: absolute;
     top: 0;
-    left: 600px;
+    left: 26vw;
 }
 .bitmedi{
     background-color: azure;
@@ -22,7 +23,7 @@
 .ilgilenildi{
     position: absolute;
     top: 50px;
-    left: 300px;
+    left: 13vw;
     font-size: 1.5rem;
 }
 .completed{

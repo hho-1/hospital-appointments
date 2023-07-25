@@ -16,7 +16,7 @@ const AddPatient = ({id, text, day, bittiMi, doktor, onDelete}) => {
   return (
     <div className='appointments'>
       {bitti ? (
-      <div className="card appointment mt-1 w-50 bitti">
+      <div className="card appointment mt-1 bitti">
         
         <div className="card-body" onClick={handleBitti}>
           <h4 className="card-text text-success completed">{text}</h4>
@@ -31,7 +31,7 @@ const AddPatient = ({id, text, day, bittiMi, doktor, onDelete}) => {
       ) 
       : 
       (
-      <div className="card appointment mt-1 w-50 bitmedi">
+      <div className="card appointment mt-1 bitmedi">
         
         <div className="card-body" onClick={handleBitti}>
           <h4 className="card-text text-success">{text}</h4>

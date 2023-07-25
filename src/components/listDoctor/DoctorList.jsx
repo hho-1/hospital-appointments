@@ -5,11 +5,11 @@ import Fatma from '../assets/Fatma.png'
 import Oya from '../assets/Oya.png'
 import "./DoctorList.css"
 import FilterDoctor from '../Doctors/FilterDoctor'
-import PatientList from '../ListPatient/PatientList';
+import PatientList from '../ListPatient/PatientList'
 
 
 
-const DoctorList = ({doktorListesi, data}) => {
+const DoctorList = ({doktorListesi, data, onCreate}) => {
 
   const [doktorlar, setDoktorlar] = useState(doktorListesi)
 
@@ -29,6 +29,18 @@ const DoctorList = ({doktorListesi, data}) => {
     })
     setHastalar(remainedPatients)
   }
+  const createNewHasta = (isim, tarih, doktorName) => {
+    const createdHastalar = [
+      ...hastalar, {
+        id: Math.round(Math.random() * 999999999),
+        text: isim,
+        day: tarih,
+        bittiMi: false,
+        doktor: doktorName
+      }];
+      setHastalar(createdHastalar)
+      console.log(createdHastalar);
+  }
 
   
 
@@ -37,10 +49,11 @@ const DoctorList = ({doktorListesi, data}) => {
       {
       doktorlar.length === 1 ? 
       (
-        <FilterDoctor doktorName={doktorlar[0]} onDelete={deletePatientById}/>
+        <FilterDoctor doktorName={doktorlar[0]} onDelete={deletePatientById} onCreate={createNewHasta}/>
       ) 
       : 
       (
+      <div>
       <div className='doctorList'>
         <div className="card" id='ahmet' onClick={createPatient}>
           <img src={Ahmet} className="card-img-top" alt="ahmet"/>
@@ -66,11 +79,14 @@ const DoctorList = ({doktorListesi, data}) => {
             <p className="card-text text-primary">{doktorListesi[0]}</p>
           </div>
         </div>
-        
+        </div>
+        <PatientList data={hastalar} onDelete={deletePatientById} onCreate={onCreate}/>
       </div>
+
+      
     )
     }
-      <PatientList data={hastalar} onDelete={deletePatientById}/>
+      
    </div>
 
     
