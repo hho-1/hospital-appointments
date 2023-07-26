@@ -12,8 +12,6 @@ function App() {
     if(!doktorList.includes(dokt.doktor)) setDoktorList([...doktorList, dokt.doktor])
   })
 
-
-  
   return (
     <div className="App container">
         <h1 className='text-center my-5'>HOSPITAL</h1>
